@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: linear-gradient(135deg, #0a3d32 0%, #1a6b5c 60%, #2a8c78 100%);
+  background: linear-gradient(135deg, #1a7faa 0%, #29ABE2 40%, #3BB54A 100%);
 }
 
 .hero-bg {
@@ -215,7 +215,7 @@
 
 /* ── Impact Banner ── */
 .impact-banner {
-  background: var(--teal-dark);
+  background: var(--charcoal);
   padding: 40px 0;
 }
 
@@ -232,11 +232,16 @@
 }
 .impact-item:last-child { border-right: none; }
 
+/* Each stat gets a different logo color */
+.impact-item:nth-child(1) .impact-num { color: var(--teal); }
+.impact-item:nth-child(2) .impact-num { color: var(--green); }
+.impact-item:nth-child(3) .impact-num { color: var(--orange); }
+.impact-item:nth-child(4) .impact-num { color: var(--amber); }
+
 .impact-num {
   font-family: var(--font-display);
   font-size: 2.4rem;
   font-weight: 900;
-  color: var(--amber);
   line-height: 1;
   display: block;
 }
@@ -331,6 +336,10 @@
   border-radius: var(--radius-sm);
   border-left: 3px solid var(--teal);
 }
+.about-feature:nth-child(1) { border-left-color: var(--teal); }
+.about-feature:nth-child(2) { border-left-color: var(--green); }
+.about-feature:nth-child(3) { border-left-color: var(--orange); }
+.about-feature:nth-child(4) { border-left-color: var(--amber); }
 
 .about-feat-icon {
   width: 36px;
@@ -441,7 +450,7 @@
 
 /* ── CTA Section ── */
 .cta-section {
-  background: linear-gradient(135deg, var(--teal-dark), var(--teal));
+  background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal) 35%, var(--green) 70%, var(--green-dark) 100%);
   padding: var(--section-pad) 0;
   position: relative;
   overflow: hidden;
@@ -666,3 +675,19 @@
   transition: background 0.2s;
 }
 .slider-dot.active { background: var(--amber); }
+
+
+.news-author {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+.news-author img {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}

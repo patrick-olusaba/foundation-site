@@ -1,24 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap');
 
 :root {
-  --teal: #1a6b5c;
-  --teal-dark: #0f4a3f;
-  --teal-light: #2a8c78;
-  --amber: #f5a623;
-  --amber-dark: #d4881a;
-  --amber-light: #ffc94d;
-  --cream: #faf7f2;
-  --cream-dark: #f0ebe0;
-  --charcoal: #1c2023;
-  --charcoal-mid: #3a4248;
-  --text-muted: #7a8590;
+  --teal: #29ABE2;
+  --teal-dark: #1a7faa;
+  --teal-light: #4dc0ed;
+  --amber: #FBB03B;
+  --amber-dark: #e09a20;
+  --amber-light: #fcc96a;
+  --orange: #F26522;
+  --orange-dark: #d4521a;
+  --green: #3BB54A;
+  --green-dark: #2a8a36;
+  --cream: #f5f9fc;
+  --cream-dark: #e3eef5;
+  --charcoal: #1a2530;
+  --charcoal-mid: #344a5a;
+  --text-muted: #6b8090;
   --white: #ffffff;
   --red-accent: #e05a4e;
 
   --font-display: 'Playfair Display', Georgia, serif;
   --font-body: 'DM Sans', system-ui, sans-serif;
 
-  --nav-h: 80px;
+  --nav-h: 120px;
   --section-pad: clamp(60px, 8vw, 120px);
   --container: 1200px;
   --radius: 16px;
@@ -58,7 +62,7 @@ ul { list-style: none; }
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--amber);
+  color: var(--orange);
   margin-bottom: 12px;
 }
 .section-title {
@@ -82,33 +86,46 @@ ul { list-style: none; }
   letter-spacing: 0.04em;
   transition: all 0.25s ease;
 }
+/* Primary = Orange (logo orange) */
 .btn-primary {
-  background: var(--amber);
-  color: var(--charcoal);
+  background: var(--orange);
+  color: var(--white);
 }
-.btn-primary:hover { background: var(--amber-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245,166,35,0.4); }
+.btn-primary:hover { background: var(--orange-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(242,101,34,0.4); }
+
+/* Outline = white border */
 .btn-outline {
   border: 2px solid var(--white);
   color: var(--white);
 }
 .btn-outline:hover { background: var(--white); color: var(--teal); }
+
+/* Teal = Cyan (logo cyan) */
 .btn-teal {
   background: var(--teal);
   color: var(--white);
 }
-.btn-teal:hover { background: var(--teal-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,107,92,0.35); }
+.btn-teal:hover { background: var(--teal-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(41,171,226,0.35); }
+
+/* Green button */
+.btn-green {
+  background: var(--green);
+  color: var(--white);
+}
+.btn-green:hover { background: var(--green-dark); transform: translateY(-2px); }
+
 .btn-sm { padding: 10px 22px; font-size: 0.82rem; }
 
 /* ── Section spacing ── */
 .section { padding: var(--section-pad) 0; }
 .section-alt { background: var(--cream); }
-.section-dark { background: var(--teal-dark); }
+.section-dark { background: var(--charcoal); }
 .section-charcoal { background: var(--charcoal); }
 
 /* ── Divider ── */
 .divider {
   width: 60px; height: 4px;
-  background: var(--amber);
+  background: var(--green);
   border-radius: 2px;
   margin: 16px 0 24px;
 }
@@ -134,7 +151,7 @@ ul { list-style: none; }
 }
 .progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--teal), var(--teal-light));
+  background: linear-gradient(90deg, var(--orange), var(--green));
   border-radius: 4px;
   transition: width 1s ease;
 }
@@ -145,7 +162,7 @@ ul { list-style: none; }
   font-family: var(--font-display);
   font-size: clamp(2.2rem, 4vw, 3.5rem);
   font-weight: 900;
-  color: var(--amber);
+  color: var(--orange);
   line-height: 1;
 }
 .stat-label {
@@ -243,7 +260,7 @@ select.input { appearance: none; }
 .page-hero-dark-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(10, 20, 15, 0.72);
+  background: linear-gradient(135deg, rgba(26,127,170,0.82) 0%, rgba(10,20,15,0.72) 100%);
 }
 .page-hero-dark-inner {
   position: relative;

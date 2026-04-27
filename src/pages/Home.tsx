@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { useState } from 'react';
+import { useLang } from '../context/LangContext';
+import { t } from '../i18n/translations';
 import '../styles/home.css';
 
 const PROGRAMS = [
@@ -52,6 +54,18 @@ const TESTIMONIALS = [
     role: 'Community Leader, Mali',
     avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80',
   },
+  {
+    text: 'Football saved my life. Before the academy I was dropping out of school. Now I have a scholarship, I train every day, and I want to play for Harambee Stars.',
+    name: 'Brian Otieno',
+    role: 'Youth Athlete, Kibera, Nairobi',
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80',
+  },
+  {
+    text: 'My daughter used to miss school three days a week. Since joining the athletics program she attends every day, eats two meals, and is top of her class.',
+    name: 'Grace Wanjiku',
+    role: 'Parent, Mathare, Nairobi',
+    avatar: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=100&q=80',
+  },
 ];
 
 const NEWS = [
@@ -61,6 +75,7 @@ const NEWS = [
     img: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80',
     date: 'Apr 12, 2026',
     cat: 'Education',
+    slug: '500-classrooms-east-africa',
   },
   {
     title: 'Clean Water Project Reaches 100,000 Beneficiaries',
@@ -68,6 +83,7 @@ const NEWS = [
     img: 'https://images.unsplash.com/photo-1559827291-72ee739d0d9a?w=600&q=80',
     date: 'Mar 28, 2026',
     cat: 'Health',
+    slug: 'clean-water-100k-beneficiaries',
   },
   {
     title: 'Annual Gala Raises $2M for Child Welfare',
@@ -75,47 +91,50 @@ const NEWS = [
     img: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&q=80',
     date: 'Mar 10, 2026',
     cat: 'Events',
+    slug: 'annual-gala-2m-raised',
+  },
+  {
+    title: 'How Sports Is Changing Lives: Stories from the Field',
+    excerpt: 'From Kibera to the national stage — meet the young athletes whose lives were transformed through football, athletics, and mentorship.',
+    img: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?w=600&q=80',
+    date: 'Apr 20, 2026',
+    cat: 'Sports',
+    slug: 'sports-changing-lives',
   },
 ];
 
 function TestimonialSlider() {
   const [idx, setIdx] = useState(0);
-  const t = TESTIMONIALS[idx];
+  const item = TESTIMONIALS[idx];
   return (
     <div className="testimonial-slider animate-fade-up">
       <div className="testimonial-slider-card">
         <div className="testimonial-stars">{'★★★★★'}</div>
-        <p className="testimonial-text">"{t.text}"</p>
+        <p className="testimonial-text">"{item.text}"</p>
         <div className="testimonial-author">
-          <img className="testimonial-avatar" src={t.avatar} alt={t.name} loading="lazy" />
+          <img className="testimonial-avatar" src={item.avatar} alt={item.name} loading="lazy" />
           <div>
-            <div className="testimonial-name">{t.name}</div>
-            <div className="testimonial-role">{t.role}</div>
+            <div className="testimonial-name">{item.name}</div>
+            <div className="testimonial-role">{item.role}</div>
           </div>
         </div>
       </div>
       <div className="testimonial-slider-nav">
-        <button
-          className="slider-arrow"
-          onClick={() => setIdx((idx - 1 + TESTIMONIALS.length) % TESTIMONIALS.length)}
-          aria-label="Previous"
-        >‹</button>
+        <button className="slider-arrow" onClick={() => setIdx((idx - 1 + TESTIMONIALS.length) % TESTIMONIALS.length)} aria-label="Previous">‹</button>
         <div className="slider-dots">
           {TESTIMONIALS.map((_, i) => (
             <button key={i} className={`slider-dot ${i === idx ? 'active' : ''}`} onClick={() => setIdx(i)} aria-label={`Go to ${i + 1}`} />
           ))}
         </div>
-        <button
-          className="slider-arrow"
-          onClick={() => setIdx((idx + 1) % TESTIMONIALS.length)}
-          aria-label="Next"
-        >›</button>
+        <button className="slider-arrow" onClick={() => setIdx((idx + 1) % TESTIMONIALS.length)} aria-label="Next">›</button>
       </div>
     </div>
   );
 }
 
 export default function Home() {
+  const { lang } = useLang();
+  const tr = t[lang];
   return (
     <main className="page-enter">
       <Helmet>
@@ -129,31 +148,27 @@ export default function Home() {
         <div className="hero-shape-2" />
         <div className="container hero-content">
           <div className="hero-text animate-fade-up">
-            <div className="hero-badge">
-              🌍 Making a Difference Since 2010
-            </div>
+            <div className="hero-badge">{tr.hero_badge}</div>
             <h1 className="hero-title">
-              Bringing <span>Hope</span> to<br />Children in Need
+              {tr.hero_title_1} <span>{tr.hero_title_2}</span><br />{tr.hero_title_3}
             </h1>
-            <p className="hero-subtitle">
-              Every child deserves safety, education, and nourishment. Join us in creating a world where no child is left behind — one life at a time.
-            </p>
+            <p className="hero-subtitle">{tr.hero_sub}</p>
             <div className="hero-actions">
-              <Link to="/donate" className="btn btn-primary">💛 Donate Now</Link>
-              <Link to="/programs" className="btn btn-outline">Our Programs →</Link>
+              <Link to="/donate" className="btn btn-primary">{tr.hero_donate}</Link>
+              <Link to="/programs" className="btn btn-outline">{tr.hero_programs}</Link>
             </div>
             <div className="hero-stats-row">
               <div className="hero-stat">
                 <div className="hero-stat-num">48K+</div>
-                <div className="hero-stat-label">Children Helped</div>
+                <div className="hero-stat-label">{tr.hero_stat_children}</div>
               </div>
               <div className="hero-stat">
                 <div className="hero-stat-num">326</div>
-                <div className="hero-stat-label">Active Campaigns</div>
+                <div className="hero-stat-label">{tr.hero_stat_campaigns}</div>
               </div>
               <div className="hero-stat">
                 <div className="hero-stat-num">$12M</div>
-                <div className="hero-stat-label">Funds Raised</div>
+                <div className="hero-stat-label">{tr.hero_stat_raised}</div>
               </div>
             </div>
           </div>
@@ -185,10 +200,10 @@ export default function Home() {
         <div className="container">
           <div className="impact-banner-inner">
             {[
-              { num: '48,000+', label: 'Children Helped' },
-              { num: '25', label: 'Countries Reached' },
-              { num: '$12M', label: 'Total Raised' },
-              { num: '15 Yrs', label: 'Of Impact' },
+              { num: '48,000+', label: tr.impact_children },
+              { num: '25', label: tr.impact_countries },
+              { num: '$12M', label: tr.impact_raised },
+              { num: '15 Yrs', label: tr.impact_years },
             ].map(({ num, label }) => (
               <div key={label} className="impact-item">
                 <span className="impact-num">{num}</span>
@@ -221,18 +236,18 @@ export default function Home() {
             </div>
 
             <div className="animate-fade-up delay-2">
-              <span className="section-tag">Who We Are</span>
-              <h2 className="section-title">We Believe Every Child Deserves a Chance to Thrive</h2>
+              <span className="section-tag">{tr.about_tag}</span>
+              <h2 className="section-title">{tr.about_title}</h2>
               <div className="divider" />
               <p style={{ color: 'var(--text-muted)', lineHeight: 1.8, marginBottom: 24 }}>
-                HopeForward Foundation was built on the principle that compassion and collective action can drive lasting change. We partner with local communities to deliver education, clean water, healthcare, and nutrition to the world's most vulnerable children.
+                {tr.about_body}
               </p>
               <div className="about-features">
                 {[
-                  { icon: '📚', label: 'Education First', text: 'Quality learning for every child' },
-                  { icon: '💧', label: 'Clean Water', text: 'Safe water for entire villages' },
-                  { icon: '🥗', label: 'Nutrition', text: 'Daily meals for healthy growth' },
-                  { icon: '🏥', label: 'Medical Care', text: 'Healthcare access for all' },
+                  { icon: '📚', label: tr.about_feat_edu, text: tr.about_feat_edu_sub },
+                  { icon: '💧', label: tr.about_feat_water, text: tr.about_feat_water_sub },
+                  { icon: '🥗', label: tr.about_feat_food, text: tr.about_feat_food_sub },
+                  { icon: '🏥', label: tr.about_feat_health, text: tr.about_feat_health_sub },
                 ].map(({ icon, label, text }) => (
                   <div key={label} className="about-feature">
                     <div className="about-feat-icon">{icon}</div>
@@ -244,8 +259,8 @@ export default function Home() {
                 ))}
               </div>
               <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
-                <Link to="/about" className="btn btn-teal">Learn More About Us</Link>
-                <Link to="/donate" className="btn btn-primary">Support Us</Link>
+                <Link to="/about" className="btn btn-teal">{tr.about_learn}</Link>
+                <Link to="/donate" className="btn btn-primary">{tr.about_support}</Link>
               </div>
             </div>
           </div>
@@ -256,11 +271,11 @@ export default function Home() {
       <section className="section section-alt">
         <div className="container">
           <div className="programs-header animate-fade-up">
-            <span className="section-tag">What We Do</span>
-            <h2 className="section-title">Our Programs for Children</h2>
+            <span className="section-tag">{tr.programs_tag}</span>
+            <h2 className="section-title">{tr.programs_title}</h2>
             <div className="divider centered" />
             <p style={{ color: 'var(--text-muted)', maxWidth: 560, margin: '0 auto' }}>
-              Your donation directly fuels life-changing programs that give children the foundations they need.
+              {tr.programs_sub}
             </p>
           </div>
           <div className="grid-3">
@@ -274,7 +289,7 @@ export default function Home() {
                   <h3 className="program-title">{p.title}</h3>
                   <p className="program-desc">{p.desc}</p>
                   <div className="program-progress-label">
-                    <span>Progress</span>
+                    <span>{tr.programs_progress}</span>
                     <span style={{ color: 'var(--teal)', fontWeight: 700 }}>{p.pct}%</span>
                   </div>
                   <div className="progress-bar">
@@ -282,17 +297,17 @@ export default function Home() {
                   </div>
                   <div className="program-footer">
                     <div className="program-raised">
-                      Raised: <strong>${(p.raised / 1000).toFixed(0)}K</strong>
+                      {tr.programs_raised}: <strong>${(p.raised / 1000).toFixed(0)}K</strong>
                       <span style={{ color: 'var(--text-muted)' }}> / ${(p.goal / 1000).toFixed(0)}K</span>
                     </div>
-                    <Link to="/donate" className="btn btn-teal btn-sm">Donate →</Link>
+                    <Link to="/donate" className="btn btn-teal btn-sm">{tr.programs_donate}</Link>
                   </div>
                 </div>
               </div>
             ))}
           </div>
           <div style={{ textAlign: 'center', marginTop: 40 }}>
-            <Link to="/programs" className="btn btn-teal">View All Programs</Link>
+            <Link to="/programs" className="btn btn-teal">{tr.programs_view_all}</Link>
           </div>
         </div>
       </section>
@@ -300,12 +315,12 @@ export default function Home() {
       {/* ── CTA ── */}
       <section className="cta-section">
         <div className="container cta-inner animate-fade-up">
-          <span className="section-tag" style={{ color: 'var(--amber-light)' }}>Make a Difference</span>
-          <h2 className="section-title light">Your Support Can Change a Life Today</h2>
-          <p>Every dollar you give goes directly to children who need it most. Together, we can build a brighter future.</p>
+          <span className="section-tag" style={{ color: 'var(--amber-light)' }}>{tr.cta_tag}</span>
+          <h2 className="section-title light">{tr.cta_title}</h2>
+          <p>{tr.cta_body}</p>
           <div className="cta-actions">
-            <Link to="/donate" className="btn btn-primary">💛 Donate Now</Link>
-            <Link to="/about" className="btn btn-outline">Become a Volunteer</Link>
+            <Link to="/donate" className="btn btn-primary">{tr.cta_donate}</Link>
+            <Link to="/volunteer" className="btn btn-outline">{tr.cta_volunteer}</Link>
           </div>
         </div>
       </section>
@@ -314,8 +329,8 @@ export default function Home() {
       <section className="transforming-section">
         <div className="container">
           <div className="transforming-header animate-fade-up">
-            <span className="section-tag" style={{ color: 'var(--amber)' }}>We are doing projects for children</span>
-            <h2 className="section-title light">Transforming Lives<br />Through Charity</h2>
+            <span className="section-tag" style={{ color: 'var(--amber)' }}>{tr.transform_tag}</span>
+            <h2 className="section-title light">{tr.transform_title}</h2>
           </div>
           <div className="transforming-grid animate-fade-up delay-1">
             {[
@@ -336,8 +351,8 @@ export default function Home() {
       <section className="section">
         <div className="container">
           <div className="testimonials-header animate-fade-up">
-            <span className="section-tag">Stories of Hope</span>
-            <h2 className="section-title">Voices from the Field</h2>
+            <span className="section-tag">{tr.test_tag}</span>
+            <h2 className="section-title">{tr.test_title}</h2>
             <div className="divider centered" />
           </div>
           <TestimonialSlider />
@@ -349,10 +364,10 @@ export default function Home() {
         <div className="container">
           <div className="news-header animate-fade-up">
             <div>
-              <span className="section-tag">Latest Updates</span>
-              <h2 className="section-title">News & Stories</h2>
+              <span className="section-tag">{tr.news_tag}</span>
+              <h2 className="section-title">{tr.news_title}</h2>
             </div>
-            <Link to="/programs" className="btn btn-teal btn-sm">View All →</Link>
+            <Link to="/blog" className="btn btn-teal btn-sm">{tr.news_view_all}</Link>
           </div>
           <div className="grid-3">
             {NEWS.map((n, i) => (
@@ -365,7 +380,7 @@ export default function Home() {
                   </div>
                   <h3 className="news-title">{n.title}</h3>
                   <p className="news-excerpt">{n.excerpt}</p>
-                  <Link to="/programs" className="news-link">Read More →</Link>
+                  <Link to={`/blog/${n.slug}`} className="news-link">{tr.news_read_more}</Link>
                 </div>
               </div>
             ))}

@@ -1,85 +1,11 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import { PROGRAMS } from '../data/content';
 import '../styles/about.css';
 import '../styles/programs.css';
 
-const PROGRAMS = [
-  {
-    title: 'Child Education Initiative',
-    cat: 'Education',
-    icon: '📚',
-    desc: 'We build and equip classrooms, train teachers, and provide scholarships so every child can access quality education regardless of their background or financial situation.',
-    img: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&q=80',
-    raised: 84000,
-    goal: 100000,
-    pct: 84,
-    beneficiaries: '18,000+ children',
-    countries: 12,
-  },
-  {
-    title: 'Clean Water Access',
-    cat: 'Health',
-    icon: '💧',
-    desc: 'We construct wells, water purification systems, and hygiene facilities in villages lacking safe water. Every five seconds, a child dies from water-related illness — we are changing that.',
-    img: 'https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=800&q=80',
-    raised: 71000,
-    goal: 100000,
-    pct: 71,
-    beneficiaries: '100,000+ people',
-    countries: 8,
-  },
-  {
-    title: 'Nutrition & Meals Program',
-    cat: 'Food',
-    icon: '🥗',
-    desc: 'We provide daily nutritious meals at schools and community centers, addressing malnutrition that stunts physical and cognitive development in millions of children.',
-    img: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&q=80',
-    raised: 39000,
-    goal: 100000,
-    pct: 39,
-    beneficiaries: '12,000+ children',
-    countries: 7,
-  },
-  {
-    title: 'Medical Care & Clinics',
-    cat: 'Health',
-    icon: '🏥',
-    desc: 'Mobile health clinics, vaccination drives, and maternal health services bring essential medical care to children and families in remote and underserved regions.',
-    img: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80',
-    raised: 56000,
-    goal: 100000,
-    pct: 56,
-    beneficiaries: '25,000+ patients',
-    countries: 10,
-  },
-  {
-    title: 'Women Empowerment',
-    cat: 'Community',
-    icon: '👩‍💼',
-    desc: 'Empowering mothers and young women through vocational training, microfinance, and leadership programs so they can build better futures for themselves and their families.',
-    img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80',
-    raised: 28000,
-    goal: 100000,
-    pct: 28,
-    beneficiaries: '5,000+ women',
-    countries: 6,
-  },
-  {
-    title: 'Emergency Relief',
-    cat: 'Emergency',
-    icon: '🆘',
-    desc: 'When conflict, drought, or disaster strikes, our rapid response teams deploy within 48 hours to deliver food, shelter, medicine, and psychological support to affected families.',
-    img: 'https://images.unsplash.com/photo-1532375810709-75b1da00537c?w=800&q=80',
-    raised: 92000,
-    goal: 100000,
-    pct: 92,
-    beneficiaries: '30,000+ people',
-    countries: 15,
-  },
-];
-
-const CATS = ['All', 'Education', 'Health', 'Food', 'Community', 'Emergency'];
+const CATS = ['All', 'Education', 'Health', 'Food', 'Community', 'Emergency', 'Sports'];
 
 const VOLUNTEER_IMGS = [
   'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=60&q=80',
@@ -157,6 +83,7 @@ export default function Programs() {
 
                 <div className="prog-actions">
                   <Link to="/donate" className="btn btn-primary btn-sm">Donate to This Cause</Link>
+                  <Link to={`/programs/${p.slug}`} className="btn btn-teal btn-sm">Learn More →</Link>
                   <div className="prog-volunteers">
                     <div className="prog-volunteers-avatars">
                       {VOLUNTEER_IMGS.map((src, vi) => (

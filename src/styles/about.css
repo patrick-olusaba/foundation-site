@@ -139,8 +139,12 @@
 .connect-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-lg);
-  border-bottom-color: var(--amber);
+  border-bottom-color: var(--orange);
 }
+.connect-card:nth-child(1):hover { border-bottom-color: var(--teal); }
+.connect-card:nth-child(2):hover { border-bottom-color: var(--green); }
+.connect-card:nth-child(3):hover { border-bottom-color: var(--orange); }
+.connect-card:nth-child(4):hover { border-bottom-color: var(--amber); }
 .connect-icon {
   font-size: 2rem;
   margin-bottom: 14px;
