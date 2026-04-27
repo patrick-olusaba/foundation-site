@@ -6,7 +6,7 @@ import '../styles/volunteer.css';
 const ROLES = ['Field Volunteer', 'Remote Support', 'Fundraising', 'Medical Professional', 'Teacher / Educator', 'Communications'];
 const AVAILABILITY = ['Weekdays', 'Weekends', 'Full-time (3+ months)', 'Part-time (a few hours/week)'];
 
-type Step = 1 | 2 | 3;
+type Step = 1 | 2 | 3 | 4;
 
 export default function Volunteer() {
   const [step, setStep] = useState<Step>(1);
@@ -161,7 +161,7 @@ export default function Volunteer() {
                       </div>
                       <div className="vol-btn-row">
                         <button className="btn btn-outline" style={{ border: '2px solid var(--teal)', color: 'var(--teal)' }} onClick={() => setStep(2)}>← Back</button>
-                        <button className="btn btn-primary" onClick={() => setStep(4 as Step)}>Submit Application 🎉</button>
+                        <button className="btn btn-primary" onClick={() => setStep(4)}>Submit Application 🎉</button>
                       </div>
                     </div>
                   )}
