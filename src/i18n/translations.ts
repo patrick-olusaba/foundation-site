@@ -30,7 +30,7 @@ export const t = {
     // About section
     about_tag: 'Who We Are',
     about_title: 'We Believe Every Child Deserves a Chance to Thrive',
-    about_body: 'HopeForward Foundation was built on the principle that compassion and collective action can drive lasting change. We partner with local communities to deliver education, clean water, healthcare, and nutrition to the world\'s most vulnerable children.',
+    about_body: 'Jfam Foundation was built on the principle that compassion and collective action can drive lasting change. We partner with local communities to deliver education, clean water, healthcare, and nutrition to the world\'s most vulnerable children.',
     about_feat_edu: 'Education First',
     about_feat_edu_sub: 'Quality learning for every child',
     about_feat_water: 'Clean Water',
@@ -79,7 +79,7 @@ export const t = {
     footer_contact: 'Get In Touch',
     footer_newsletter: 'Newsletter',
     footer_newsletter_placeholder: 'Your email',
-    footer_copy: '© 2026 HopeForward Foundation. All rights reserved.',
+    footer_copy: '© 2026 Jfam Foundation. All rights reserved.',
   },
 
   sw: {
@@ -113,7 +113,7 @@ export const t = {
     // About section
     about_tag: 'Sisi Ni Nani',
     about_title: 'Tunaamini Kila Mtoto Anastahili Nafasi ya Kustawi',
-    about_body: 'HopeForward Foundation ilianzishwa kwa kanuni kwamba huruma na hatua za pamoja zinaweza kuleta mabadiliko ya kudumu. Tunashirikiana na jamii za ndani kutoa elimu, maji safi, huduma za afya, na lishe kwa watoto walio hatarini zaidi duniani.',
+    about_body: 'Jfam Foundation ilianzishwa kwa kanuni kwamba huruma na hatua za pamoja zinaweza kuleta mabadiliko ya kudumu. Tunashirikiana na jamii za ndani kutoa elimu, maji safi, huduma za afya, na lishe kwa watoto walio hatarini zaidi duniani.',
     about_feat_edu: 'Elimu Kwanza',
     about_feat_edu_sub: 'Ujifunzaji bora kwa kila mtoto',
     about_feat_water: 'Maji Safi',
@@ -162,7 +162,7 @@ export const t = {
     footer_contact: 'Wasiliana Nasi',
     footer_newsletter: 'Jarida',
     footer_newsletter_placeholder: 'Barua pepe yako',
-    footer_copy: '© 2026 HopeForward Foundation. Haki zote zimehifadhiwa.',
+    footer_copy: '© 2026 Jfam Foundation. Haki zote zimehifadhiwa.',
   },
 } as const;
 

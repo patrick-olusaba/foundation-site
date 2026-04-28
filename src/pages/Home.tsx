@@ -37,7 +37,7 @@ const PROGRAMS = [
 
 const TESTIMONIALS = [
   {
-    text: 'HopeForward changed my daughter\'s life. She now attends school and dreams of becoming a doctor. I am eternally grateful for the support this foundation provides.',
+    text: 'Jfam Foundation changed my daughter\'s life. She now attends school and dreams of becoming a doctor. I am eternally grateful for the support this foundation provides.',
     name: 'Amara Diallo',
     role: 'Parent, Senegal',
     avatar: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=100&q=80',
@@ -138,8 +138,8 @@ export default function Home() {
   return (
     <main className="page-enter">
       <Helmet>
-        <title>HopeForward Foundation — Bringing Hope to Children in Need</title>
-        <meta name="description" content="HopeForward Foundation delivers education, clean water, nutrition, and healthcare to 48,000+ children across 25 countries. Join us in making a difference." />
+        <title>Jfam Foundation — Bringing Hope to Children in Need</title>
+        <meta name="description" content="Jfam Foundation delivers education, clean water, nutrition, and healthcare to 48,000+ children across 25 countries. Join us in making a difference." />
       </Helmet>
       {/* ── HERO ── */}
       <section className="hero">

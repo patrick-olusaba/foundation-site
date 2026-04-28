@@ -12,7 +12,7 @@ const AMOUNTS = [
 ];
 
 const RECENT_DONORS = [
-  { name: 'Sarah M.', location: 'New York, US', amount: '$250', img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80', time: '2 min ago' },
+  { name: 'Sarah M.', location: 'Nairobi, Kenya', amount: '$250', img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80', time: '2 min ago' },
   { name: 'James O.', location: 'London, UK', amount: '$100', img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80', time: '14 min ago' },
   { name: 'Amina K.', location: 'Toronto, CA', amount: '$500', img: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=80&q=80', time: '1 hr ago' },
 ];
@@ -33,8 +33,8 @@ export default function Donate() {
   return (
     <main className="page-enter">
       <Helmet>
-        <title>Donate | HopeForward Foundation</title>
-        <meta name="description" content="Make a secure donation to HopeForward Foundation. Every dollar goes directly to programs that educate, feed, and protect children in need." />
+        <title>Donate | Jfam Foundation</title>
+        <meta name="description" content="Make a secure donation to Jfam Foundation. Every dollar goes directly to programs that educate, feed, and protect children in need." />
       </Helmet>
       {/* Hero */}
       <section className="page-hero-dark">

@@ -6,7 +6,7 @@ import '../styles/contact.css';
 
 const FAQS = [
   { q: 'Where does my donation go?', a: '100% of your donation is directed to our programs. Administrative costs are covered by separate operational grants, so every dollar you give reaches the children it is meant to help.' },
-  { q: 'Is my donation tax-deductible?', a: 'Yes. HopeForward Foundation is a registered 501(c)(3) nonprofit. All donations are tax-deductible to the extent permitted by law. You will receive a receipt for your records.' },
+  { q: 'Is my donation tax-deductible?', a: 'Yes. Jfam Foundation is a registered 501(c)(3) nonprofit. All donations are tax-deductible to the extent permitted by law. You will receive a receipt for your records.' },
   { q: 'Can I sponsor a specific child or program?', a: 'Absolutely. You can direct your donation to any of our six programs. Child sponsorship options are available starting at $25/month and include regular updates on the child\'s progress.' },
   { q: 'How do I become a volunteer?', a: 'We welcome volunteers in the field and remotely. Fill out the contact form on this page with "Volunteer" selected and our team will reach out within 48 hours with opportunities matching your skills.' },
   { q: 'How transparent is your organization?', a: 'Very. We publish annual impact reports, quarterly financial statements, and third-party audits on our website. We are rated 4-star by Charity Navigator and hold the GuideStar Platinum Seal.' },
@@ -28,8 +28,8 @@ export default function Contact() {
   return (
     <main className="page-enter">
       <Helmet>
-        <title>Contact Us | HopeForward Foundation</title>
-        <meta name="description" content="Get in touch with HopeForward Foundation. Donate, volunteer, partner, or reach out to our team. We respond within 24 hours." />
+        <title>Contact Us | Jfam Foundation</title>
+        <meta name="description" content="Get in touch with Jfam Foundation. Donate, volunteer, partner, or reach out to our team. We respond within 24 hours." />
       </Helmet>
       {/* Hero */}
       <section className="page-hero-dark">
@@ -56,9 +56,9 @@ export default function Contact() {
               <p>Whether you're a donor, volunteer, community partner, or journalist — our doors are always open. Reach us through any of the channels below and we'll respond within 24 hours.</p>
 
               {[
-                { icon: '📍', label: 'Our Office', value: '244 Royal Lane, New York, NY 10001', sub: 'Visit us Monday – Friday, 9am – 5pm' },
-                { icon: '📞', label: 'Phone', value: '+1 (555) 234-5678', sub: 'Mon–Fri, 9am–6pm EST' },
-                { icon: '✉️', label: 'Email', value: 'hello@hopeforward.org', sub: 'We reply within 24 hours' },
+                { icon: '📍', label: 'Our Office', value: 'Westlands, Nairobi, Kenya', sub: 'Visit us Monday – Friday, 8am – 5pm EAT' },
+                { icon: '📞', label: 'Phone', value: '+254 700 000 000', sub: 'Mon–Fri, 8am–5pm EAT' },
+                { icon: '✉️', label: 'Email', value: 'hello@Jfam Foundation.org', sub: 'We reply within 24 hours' },
                 { icon: '🌍', label: 'Field Offices', value: 'Nairobi · Lagos · Dhaka · Bogotá', sub: 'Regional offices across 4 continents' },
               ].map(d => (
                 <div key={d.label} className="contact-detail">
@@ -74,8 +74,8 @@ export default function Contact() {
               {/* Map */}
               <div className="contact-map">
                 <iframe
-                  title="HopeForward Office Location"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215573291865!2d-73.99716492346193!3d40.74844097138946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1713952000000!5m2!1sen!2sus"
+                  title="Jfam Foundation Office Location"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.808!2d36.7820!3d-1.2676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f173c0a1f9de7%3A0x4a1b2c3d4e5f6a7b!2sWestlands%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1713952000000!5m2!1sen!2ske"
                   width="100%"
                   height="200"
                   style={{ border: 0 }}

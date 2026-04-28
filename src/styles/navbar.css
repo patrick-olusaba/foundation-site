@@ -9,8 +9,8 @@
 }
 
 .navbar.scrolled {
-  background: var(--white);
-  box-shadow: 0 2px 20px rgba(0,0,0,0.10);
+  background: var(--charcoal);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.25);
 }
 
 .navbar.transparent {
@@ -33,14 +33,6 @@
   height: 110px;
   width: auto;
   object-fit: contain;
-  transition: opacity 0.3s;
-}
-.navbar.transparent .nav-logo-img {
-  /* on dark hero: add white glow so logo pops */
-  filter: drop-shadow(0 0 8px rgba(255,255,255,0.5));
-}
-.navbar.scrolled .nav-logo-img {
-  filter: none;
 }
 
 /* Nav links */
@@ -61,7 +53,7 @@
 }
 
 .navbar.scrolled .nav-link {
-  color: var(--charcoal-mid);
+  color: rgba(255,255,255,0.88);
 }
 
 .nav-link:hover,
@@ -71,8 +63,8 @@
 }
 
 .navbar.scrolled .nav-link.active {
-  color: var(--teal);
-  background: rgba(26,107,92,0.08);
+  color: var(--amber);
+  background: rgba(251,176,59,0.15);
 }
 
 .nav-donate {
@@ -106,7 +98,7 @@
   border-radius: 2px;
   transition: all 0.3s;
 }
-.navbar.scrolled .nav-hamburger span { background: var(--charcoal); }
+.navbar.scrolled .nav-hamburger span { background: var(--white); }
 
 /* Mobile menu */
 .nav-mobile {

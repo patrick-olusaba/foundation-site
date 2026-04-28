@@ -7,8 +7,8 @@ export default function Blog() {
   return (
     <main className="page-enter">
       <Helmet>
-        <title>News & Stories | HopeForward Foundation</title>
-        <meta name="description" content="Latest news, impact stories, and updates from HopeForward Foundation." />
+        <title>News & Stories | Jfam Foundation</title>
+        <meta name="description" content="Latest news, impact stories, and updates from Jfam Foundation." />
       </Helmet>
 
       <section className="page-hero-dark">

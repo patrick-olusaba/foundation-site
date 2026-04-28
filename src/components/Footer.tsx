@@ -15,7 +15,7 @@ export default function Footer() {
 
           <div className="footer-brand">
             <Link to="/" style={{ display: 'inline-block' }}>
-              <img src={logoImg} alt="JFAM Foundation" style={{ height: 64, width: 'auto' }} />
+              <img src={logoImg} alt="JFAM Foundation" style={{ height: 120, width: 'auto' }} />
             </Link>
             <p className="footer-desc">{tr.footer_desc}</p>
             <div className="footer-socials">
@@ -56,15 +56,15 @@ export default function Footer() {
             <h4 className="footer-heading">{tr.footer_contact}</h4>
             <div className="footer-contact-item">
               <span className="footer-contact-icon">📍</span>
-              <span>244 Royal Ln, New York, NY 10001, USA</span>
+              <span>Westlands, Nairobi, Kenya</span>
             </div>
             <div className="footer-contact-item">
               <span className="footer-contact-icon">📞</span>
-              <span>+1 (555) 234-5678</span>
+              <span>+254 700 000 000</span>
             </div>
             <div className="footer-contact-item">
               <span className="footer-contact-icon">✉️</span>
-              <span>hello@hopeforward.org</span>
+              <span>hello@Jfam Foundation.org</span>
             </div>
 
             <h4 className="footer-heading" style={{ marginTop: 24 }}>{tr.footer_newsletter}</h4>

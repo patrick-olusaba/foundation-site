@@ -20,8 +20,8 @@ export default function Programs() {
   return (
     <main className="page-enter">
       <Helmet>
-        <title>Our Programs | HopeForward Foundation</title>
-        <meta name="description" content="Explore HopeForward's programs: child education, clean water, nutrition, medical care, women empowerment, and emergency relief across 25 countries." />
+        <title>Our Programs | Jfam Foundation</title>
+        <meta name="description" content="Explore Jfam Foundation's programs: child education, clean water, nutrition, medical care, women empowerment, and emergency relief across 25 countries." />
       </Helmet>
       {/* Hero */}
       <section className="page-hero-dark">

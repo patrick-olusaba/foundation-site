@@ -13,7 +13,7 @@ export default function ProgramDetail() {
   return (
     <main className="page-enter">
       <Helmet>
-        <title>{program.title} | HopeForward Foundation</title>
+        <title>{program.title} | Jfam Foundation</title>
         <meta name="description" content={program.desc} />
       </Helmet>
 

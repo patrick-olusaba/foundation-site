@@ -5,7 +5,7 @@ export default function NotFound() {
   return (
     <>
       <Helmet>
-        <title>Page Not Found | HopeForward Foundation</title>
+        <title>Page Not Found | Jfam Foundation</title>
       </Helmet>
       <main style={{ minHeight: '80vh', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '40px 20px' }}>
         <div>

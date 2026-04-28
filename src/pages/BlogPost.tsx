@@ -13,7 +13,7 @@ export default function BlogPost() {
   return (
     <main className="page-enter">
       <Helmet>
-        <title>{post.title} | HopeForward Foundation</title>
+        <title>{post.title} | Jfam Foundation</title>
         <meta name="description" content={post.excerpt} />
       </Helmet>
 

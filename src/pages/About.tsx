@@ -45,8 +45,8 @@ export default function About() {
   return (
     <main className="page-enter">
       <Helmet>
-        <title>About Us | HopeForward Foundation</title>
-        <meta name="description" content="Learn about HopeForward Foundation's mission, leadership team, and global partners working to protect and empower children worldwide." />
+        <title>About Us | Jfam Foundation</title>
+        <meta name="description" content="Learn about Jfam Foundation's mission, leadership team, and global partners working to protect and empower children worldwide." />
       </Helmet>
 
       {/* ── Dark Photo Hero ── */}

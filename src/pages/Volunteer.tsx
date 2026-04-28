@@ -21,8 +21,8 @@ export default function Volunteer() {
   return (
     <main className="page-enter">
       <Helmet>
-        <title>Volunteer | HopeForward Foundation</title>
-        <meta name="description" content="Join HopeForward as a volunteer. Apply online and help us deliver education, clean water, and healthcare to children in need." />
+        <title>Volunteer | Jfam Foundation</title>
+        <meta name="description" content="Join Jfam Foundation as a volunteer. Apply online and help us deliver education, clean water, and healthcare to children in need." />
       </Helmet>
 
       {/* Hero */}
@@ -57,7 +57,7 @@ export default function Volunteer() {
                 <div className="vol-success animate-fade-up">
                   <div className="vol-success-icon">🎉</div>
                   <h2>Application Submitted!</h2>
-                  <p>Thank you for applying to volunteer with HopeForward. Our team will review your application and contact you within 48 hours.</p>
+                  <p>Thank you for applying to volunteer with Jfam Foundation. Our team will review your application and contact you within 48 hours.</p>
                   <Link to="/" className="btn btn-teal">Back to Home</Link>
                 </div>
               ) : (
@@ -157,7 +157,7 @@ export default function Volunteer() {
                       </div>
                       <div className="form-group">
                         <label className="form-label">Why do you want to volunteer? (optional)</label>
-                        <textarea className="input" value={form.motivation} onChange={e => set('motivation', e.target.value)} placeholder="Tell us what motivates you to join HopeForward..." />
+                        <textarea className="input" value={form.motivation} onChange={e => set('motivation', e.target.value)} placeholder="Tell us what motivates you to join Jfam Foundation..." />
                       </div>
                       <div className="vol-btn-row">
                         <button className="btn btn-outline" style={{ border: '2px solid var(--teal)', color: 'var(--teal)' }} onClick={() => setStep(2)}>← Back</button>
